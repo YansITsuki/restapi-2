@@ -10,10 +10,6 @@ const bodyParser = require("body-parser");
 const app = express();
 
 const MONGO_URI = "KASIH URLNYA BANG"
-
-const login = require("./routes/login");
-const signup = require("./routes/signup");
-const member = require("./routes/member");
 const jsonrouter = require("./routes/jsonapi");
 
 
@@ -33,9 +29,6 @@ app.use(
 );
 app.use(express.json());
 app.set("json spaces",2)
-app.use("/api/login", login);
-app.use("/api/signup", signup);
-app.use("/api/member", member);
 app.use("/api/json", jsonrouter);
 
 if (process.env.NODE_ENV == "production") {
